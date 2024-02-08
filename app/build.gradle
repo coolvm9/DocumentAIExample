@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Dependencies
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    runtimeOnly 'org.slf4j:slf4j-simple:1.7.32'
+}
+
+// Define a custom task to execute Java methods
+task executeMethods(type: JavaExec) {
+    mainClass = 'com.blenddata.documentai.DocumentAIExample' // Set the main class
+    classpath = sourceSets.main.runtimeClasspath
+
+    // Pass arguments to specify which methods to call
+    doFirst {
+        if (project.hasProperty("methods")) {
+            args project.methods.split(',')
+        }
+    }
+}
