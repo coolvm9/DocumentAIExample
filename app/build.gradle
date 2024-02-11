@@ -27,6 +27,9 @@ dependencies {
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
     implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.32'
     implementation 'org.springframework.boot:spring-boot-devtools'
+
+    implementation 'com.google.cloud:google-cloud-documentai:2.0.0'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.slf4j:slf4j-api:1.7.32'
